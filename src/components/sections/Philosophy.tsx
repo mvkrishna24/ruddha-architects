@@ -1,3 +1,5 @@
+import { FOUNDER } from '@/lib/constants';
+
 export default function Philosophy() {
   return (
     <section
@@ -10,7 +12,8 @@ export default function Philosophy() {
       }}
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Eyebrow */}
+
+        {/* ── Eyebrow ── */}
         <div
           style={{
             display: 'flex',
@@ -29,31 +32,29 @@ export default function Philosophy() {
               color: '#b87941',
             }}
           >
-            Our Philosophy
+            About the Studio
           </span>
         </div>
 
-        {/* Two Columns */}
+        {/* ── Two Columns ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
 
-          {/* Left: Manifesto Quote */}
+          {/* Left: Philosophy Quote */}
           <div>
             <blockquote style={{ margin: 0, padding: 0 }}>
               <h2
                 id="philosophy-heading"
                 style={{
                   fontFamily: 'var(--font-cormorant), Georgia, serif',
-                  fontSize: 'clamp(2rem, 3.75vw, 3.5rem)',
+                  fontSize: 'clamp(1.875rem, 3.75vw, 3.25rem)',
                   fontWeight: 300,
-                  lineHeight: 1.18,
+                  lineHeight: 1.2,
                   letterSpacing: '-0.01em',
                   color: '#1a1714',
                   margin: 0,
                 }}
               >
-                &ldquo;We believe great architecture is not built. It is{' '}
-                <em style={{ fontStyle: 'italic', color: '#b87941' }}>grown</em>
-                {' '}— from context, culture, and human need.&rdquo;
+                {FOUNDER.philosophy}
               </h2>
             </blockquote>
 
@@ -76,11 +77,43 @@ export default function Philosophy() {
                 margin: 0,
               }}
             >
-              &mdash; Ruddha Design Manifesto
+              &mdash; {FOUNDER.name}, {FOUNDER.role}
             </p>
+
+            {/* Founder credential */}
+            <div
+              style={{
+                marginTop: '2.5rem',
+                paddingTop: '2rem',
+                borderTop: '1px solid rgba(26, 23, 20, 0.08)',
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: 'var(--font-dm-mono), monospace',
+                  fontSize: '0.52rem',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(184, 121, 65, 0.7)',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                Education
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.9375rem',
+                  fontWeight: 300,
+                  color: 'rgba(26, 23, 20, 0.7)',
+                }}
+              >
+                {FOUNDER.degree}
+              </div>
+            </div>
           </div>
 
-          {/* Right: Body */}
+          {/* Right: Studio Story */}
           <div>
             <h3
               style={{
@@ -89,39 +122,60 @@ export default function Philosophy() {
                 fontWeight: 400,
                 lineHeight: 1.2,
                 color: '#1a1714',
-                marginBottom: '1.375rem',
+                marginBottom: '1.75rem',
               }}
             >
-              Spaces that outlast trends.
+              Architecture from Warangal.{' '}
+              <em style={{ fontStyle: 'italic', color: '#b87941' }}>Built for life.</em>
             </h3>
-            <p
+
+            {FOUNDER.bio.map((paragraph, i) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.9375rem',
+                  fontWeight: 300,
+                  color: 'rgba(26, 23, 20, 0.65)',
+                  lineHeight: 1.9,
+                  marginBottom: i < FOUNDER.bio.length - 1 ? '1.375rem' : '3.25rem',
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+
+            {/* Approach Tags */}
+            <div
               style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9375rem',
-                fontWeight: 300,
-                color: 'rgba(26, 23, 20, 0.65)',
-                lineHeight: 1.9,
-                marginBottom: '1.375rem',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.625rem',
+                marginBottom: '3rem',
               }}
             >
-              At Ruddha, we approach each project as a dialogue — between the land and the structure,
-              between the client&apos;s vision and the architect&apos;s intuition, between what is
-              needed now and what will endure.
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.9375rem',
-                fontWeight: 300,
-                color: 'rgba(26, 23, 20, 0.65)',
-                lineHeight: 1.9,
-                marginBottom: '3.25rem',
-              }}
-            >
-              We work across scales — from intimate residences to expansive commercial complexes —
-              always guided by a commitment to material integrity, spatial quality, and the poetry
-              of light.
-            </p>
+              {[
+                'AI-Integrated Design',
+                'Modern Architecture',
+                'Functional Planning',
+                'Client-Centric Process',
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.5rem',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#b87941',
+                    border: '1px solid rgba(184, 121, 65, 0.35)',
+                    padding: '0.375rem 0.75rem',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             {/* Stats */}
             <div
@@ -132,9 +186,9 @@ export default function Philosophy() {
               }}
             >
               {[
-                { number: '10+', label: 'Years' },
-                { number: '50+', label: 'Projects' },
-                { number: '05',  label: 'Awards' },
+                { number: '2+',  label: 'Years Active' },
+                { number: '15+', label: 'Projects' },
+                { number: '6',   label: 'Disciplines' },
               ].map(({ number, label }) => (
                 <div key={label}>
                   <div

@@ -3,29 +3,24 @@
 import { NAV_LINKS, BRAND } from '@/lib/constants';
 
 export default function Footer() {
-
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      style={{
-        backgroundColor: '#0f0e0c',
-        borderTop: '1px solid rgba(184, 121, 65, 0.1)',
-      }}
-    >
+    <footer className="bg-[#0f0e0c] border-t border-[rgba(184,121,65,0.1)]">
       <div
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          padding: '5rem 2rem 2.5rem',
+          padding: '4rem 1.5rem 2.5rem',
         }}
       >
         {/* ── Top Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16"
+        <div
+          className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12"
           style={{ paddingBottom: '3rem', borderBottom: '1px solid rgba(245, 242, 237, 0.07)' }}
         >
-          {/* Col 1: Brand */}
-          <div>
+          {/* Brand Column — wider */}
+          <div className="md:col-span-5">
             <div style={{ marginBottom: '1.5rem' }}>
               <div
                 style={{
@@ -47,29 +42,45 @@ export default function Footer() {
                   letterSpacing: '0.3em',
                   color: '#b87941',
                   textTransform: 'uppercase',
-                  marginTop: '5px',
+                  marginTop: '6px',
                 }}
               >
                 Architects &amp; Interiors
               </div>
             </div>
+
+            {/* Tagline */}
+            <p
+              style={{
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontSize: '1.125rem',
+                fontWeight: 300,
+                fontStyle: 'italic',
+                color: 'rgba(245, 242, 237, 0.45)',
+                lineHeight: 1.6,
+                marginBottom: '1.5rem',
+              }}
+            >
+              {BRAND.tagline}
+            </p>
+
             <p
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
                 fontWeight: 300,
-                color: 'rgba(245, 242, 237, 0.45)',
+                color: 'rgba(245, 242, 237, 0.35)',
                 lineHeight: 1.85,
-                maxWidth: '280px',
+                maxWidth: '320px',
                 margin: 0,
               }}
             >
-              A studio built on the belief that every space tells a story. We design architecture that endures.
+              A studio built on the belief that every space has a story to tell. We design architecture that endures — in Warangal and across Telangana.
             </p>
           </div>
 
-          {/* Col 2: Quick Links */}
-          <div>
+          {/* Navigate Column */}
+          <div className="md:col-span-3">
             <h3
               style={{
                 fontFamily: 'var(--font-dm-mono), monospace',
@@ -109,8 +120,7 @@ export default function Footer() {
                       (e.currentTarget as HTMLAnchorElement).style.color = '#f5f2ed';
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        'rgba(245, 242, 237, 0.5)';
+                      (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245, 242, 237, 0.5)';
                     }}
                   >
                     {link.label}
@@ -120,8 +130,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Contact */}
-          <div>
+          {/* Contact Column */}
+          <div className="md:col-span-4">
             <h3
               style={{
                 fontFamily: 'var(--font-dm-mono), monospace',
@@ -135,73 +145,120 @@ export default function Footer() {
             >
               Get in Touch
             </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
-              <a
-                href={`mailto:${BRAND.email}`}
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  color: 'rgba(245, 242, 237, 0.5)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#b87941';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color =
-                    'rgba(245, 242, 237, 0.5)';
-                }}
-              >
-                {BRAND.email}
-              </a>
-              <a
-                href={`tel:${BRAND.phone.replace(/\s/g, '')}`}
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  color: 'rgba(245, 242, 237, 0.5)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#f5f2ed';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color =
-                    'rgba(245, 242, 237, 0.5)';
-                }}
-              >
-                {BRAND.phone}
-              </a>
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  color: 'rgba(245, 242, 237, 0.3)',
-                  margin: 0,
-                }}
-              >
-                {BRAND.address}
-              </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+
+              {/* Email */}
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.48rem',
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(184, 121, 65, 0.55)',
+                    marginBottom: '0.3rem',
+                  }}
+                >
+                  Email
+                </div>
+                <a
+                  href={`mailto:${BRAND.email}`}
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    fontWeight: 300,
+                    color: 'rgba(245, 242, 237, 0.55)',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#b87941';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245, 242, 237, 0.55)';
+                  }}
+                >
+                  {BRAND.email}
+                </a>
+              </div>
+
+              {/* Phone */}
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.48rem',
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(184, 121, 65, 0.55)',
+                    marginBottom: '0.3rem',
+                  }}
+                >
+                  Phone
+                </div>
+                <a
+                  href={`tel:${BRAND.phone.replace(/\s/g, '')}`}
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    fontWeight: 300,
+                    color: 'rgba(245, 242, 237, 0.55)',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#f5f2ed';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245, 242, 237, 0.55)';
+                  }}
+                >
+                  {BRAND.phone}
+                </a>
+              </div>
+
+              {/* Studio */}
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.48rem',
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(184, 121, 65, 0.55)',
+                    marginBottom: '0.3rem',
+                  }}
+                >
+                  Studio
+                </div>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    fontWeight: 300,
+                    color: 'rgba(245, 242, 237, 0.4)',
+                    margin: 0,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {BRAND.address}
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* ── Bottom Bar ── */}
         <div
-          className="flex flex-col md:flex-row justify-between items-center md:items-center gap-3"
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3"
           style={{ paddingTop: '1.75rem' }}
         >
           <p
             style={{
               fontFamily: 'var(--font-dm-mono), monospace',
-              fontSize: '0.55rem',
+              fontSize: '0.52rem',
               letterSpacing: '0.14em',
-              color: 'rgba(245, 242, 237, 0.25)',
+              color: 'rgba(245, 242, 237, 0.2)',
               margin: 0,
             }}
           >
@@ -210,13 +267,13 @@ export default function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-dm-mono), monospace',
-              fontSize: '0.55rem',
+              fontSize: '0.52rem',
               letterSpacing: '0.14em',
-              color: 'rgba(245, 242, 237, 0.2)',
+              color: 'rgba(245, 242, 237, 0.15)',
               margin: 0,
             }}
           >
-            Designed with precision &mdash; Hyderabad, India
+            Est. {BRAND.est} &mdash; Warangal, Telangana, India
           </p>
         </div>
       </div>

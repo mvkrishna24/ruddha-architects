@@ -83,7 +83,7 @@ export default function Hero() {
             marginBottom: '3rem',
           }}
         >
-          We design spaces that are structurally sound, visually timeless, and deeply rooted in human experience.
+          An architecture and interiors studio based in Warangal — designing spaces that are disciplined in structure, refined in detail, and built for the life lived inside them.
         </p>
 
         {/* CTA Buttons */}
