@@ -15,11 +15,17 @@ export default function HomePage() {
 
       <main id="main-content">
         <Hero />
+        <div className="divider-hairline" />
         <Philosophy />
+        <div className="divider-hairline" />
         <Services />
+        <div className="divider-hairline" />
         <TrustSignals />
+        <div className="divider-hairline" />
         <Process />
+        <div className="divider-hairline" />
         <FeaturedProjects />
+        <div className="divider-hairline" />
         <Contact />
       </main>
 

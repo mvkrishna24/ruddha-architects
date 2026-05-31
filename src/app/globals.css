@@ -34,7 +34,7 @@
   100% { transform: translateY(200%); }
 }
 
-/* ─── Base Reset ─── */
+/* ─── Base Reset & Luxury Texture ─── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -46,16 +46,31 @@ body {
   background-color: #1a1714;
   color: #f5f2ed;
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.9375rem;
+  line-height: 1.85; /* Premium spacious line-height */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+/* Analog Micro-Grain Texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.015; /* Subtle and expensive */
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  line-height: 1.05;
+  line-height: 1.15; /* Elegant heading rhythm */
+  letter-spacing: -0.01em;
 }
 
 img, svg, picture, video { display: block; max-width: 100%; }
@@ -65,6 +80,74 @@ input, button, textarea, select { font: inherit; }
   background-color: #b87941;
   color: #1a1714;
 }
+
+/* ─── Luxury Buttons & Links ─── */
+.btn-primary {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1714;
+  background-color: #b87941;
+  text-decoration: none;
+  padding: 1rem 2.25rem;
+  display: inline-flex;
+  alignItems: center;
+  gap: 0.625rem;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid #b87941;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #d4975a;
+  border-color: #d4975a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(184, 121, 65, 0.2);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f5f2ed;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(245, 242, 237, 0.15);
+  transition: border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  border-color: #b87941;
+  color: #b87941;
+  background-color: rgba(184, 121, 65, 0.05);
+  transform: translateY(-2px);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Hairline Divider */
+.divider-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(184, 121, 65, 0.15) 50%, transparent 100%);
+  width: 100%;
+}
+
 
 /* ─── Animation Utilities ─── */
 .anim-fade-up {
@@ -208,15 +291,29 @@ input, button, textarea, select { font: inherit; }
 /* ─── Featured Project Cards ─── */
 .featured-card {
   cursor: pointer;
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.featured-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.featured-card:hover::before {
+  border-color: rgba(184, 121, 65, 0.4);
 }
 .featured-card-thumb-inner {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .featured-card:hover .featured-card-thumb-inner {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 .featured-card:hover .featured-card-overlay {
-  background-color: rgba(26, 23, 20, 0.12) !important;
+  background-color: rgba(26, 23, 20, 0.08) !important;
 }
 .featured-card:hover .featured-card-bar {
   transform: scaleX(1) !important;
@@ -229,12 +326,25 @@ input, button, textarea, select { font: inherit; }
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.projects-grid-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.projects-grid-card:hover::before {
+  border-color: rgba(184, 121, 65, 0.4);
 }
 .projects-grid-card-thumb-inner {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .projects-grid-card:hover .projects-grid-card-thumb-inner {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 .projects-grid-card-bar {
   position: absolute;
@@ -245,11 +355,12 @@ input, button, textarea, select { font: inherit; }
   background-color: #b87941;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .projects-grid-card:hover .projects-grid-card-bar {
   transform: scaleX(1);
 }
+
 
 /* ─── Filter Tabs ─── */
 .filter-tab {

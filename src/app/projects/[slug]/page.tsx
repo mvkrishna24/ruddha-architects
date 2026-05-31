@@ -482,21 +482,7 @@ export default async function ProjectDetailPage({
               <Link
                 href="/#contact"
                 id="project-detail-cta"
-                style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.62rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#1a1714',
-                  backgroundColor: '#b87941',
-                  textDecoration: 'none',
-                  padding: '1rem 2.25rem',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.625rem',
-                  transition: 'background-color 0.25s ease',
-                }}
+                className="btn-primary"
               >
                 Start a Conversation
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -505,21 +491,7 @@ export default async function ProjectDetailPage({
               </Link>
               <Link
                 href="/projects"
-                style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.62rem',
-                  fontWeight: 400,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#f5f2ed',
-                  textDecoration: 'none',
-                  padding: '1rem 2.25rem',
-                  border: '1px solid rgba(245,242,237,0.15)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  transition: 'border-color 0.25s ease',
-                }}
+                className="btn-secondary"
               >
                 View All Projects
               </Link>

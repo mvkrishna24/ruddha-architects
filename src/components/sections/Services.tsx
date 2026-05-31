@@ -1,3 +1,4 @@
+import Reveal from '@/components/ui/Reveal';
 import { SERVICES, type Service } from '@/lib/constants';
 
 type ServiceId = 'architecture' | 'interiors' | 'landscape' | 'renovation' | 'turnkey' | 'consultation';
@@ -67,66 +68,72 @@ export default function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      style={{ backgroundColor: '#1a1714', padding: '7rem 2rem' }}
+      style={{ backgroundColor: '#1a1714', padding: '8rem 2rem' }}
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
 
         {/* ── Header ── */}
         <div
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
-          style={{ marginBottom: '4rem' }}
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+          style={{ marginBottom: '5rem' }}
         >
           <div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.875rem',
-                marginBottom: '1.5rem',
-              }}
-            >
-              <div style={{ width: '36px', height: '1px', backgroundColor: '#b87941', flexShrink: 0 }} />
-              <span
+            <Reveal>
+              <div
                 style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.58rem',
-                  letterSpacing: '0.28em',
-                  textTransform: 'uppercase',
-                  color: '#b87941',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.875rem',
+                  marginBottom: '1.5rem',
                 }}
               >
-                What We Do
-              </span>
-            </div>
-            <h2
-              id="services-heading"
+                <div style={{ width: '36px', height: '1px', backgroundColor: '#b87941', flexShrink: 0 }} />
+                <span
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.28em',
+                    textTransform: 'uppercase',
+                    color: '#b87941',
+                  }}
+                >
+                  What We Do
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <h2
+                id="services-heading"
+                style={{
+                  fontFamily: 'var(--font-cormorant), Georgia, serif',
+                  fontSize: 'clamp(2rem, 4vw, 3rem)',
+                  fontWeight: 300,
+                  color: '#f5f2ed',
+                  lineHeight: 1.15,
+                  maxWidth: '480px',
+                  margin: 0,
+                }}
+              >
+                A full spectrum of architectural services.
+              </h2>
+            </Reveal>
+          </div>
+
+          <Reveal delay={300}>
+            <p
               style={{
-                fontFamily: 'var(--font-cormorant), Georgia, serif',
-                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.9375rem',
                 fontWeight: 300,
-                color: '#f5f2ed',
-                lineHeight: 1.1,
-                maxWidth: '480px',
+                color: 'rgba(245, 242, 237, 0.45)',
+                maxWidth: '320px',
+                lineHeight: 1.8,
                 margin: 0,
               }}
             >
-              A full spectrum of architectural services.
-            </h2>
-          </div>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.9rem',
-              fontWeight: 300,
-              color: 'rgba(245, 242, 237, 0.45)',
-              maxWidth: '300px',
-              lineHeight: 1.8,
-              margin: 0,
-            }}
-          >
-            Architecture, interiors, landscape, and execution — all under one roof, one team, one contract.
-          </p>
+              Architecture, interiors, landscape, and execution — all under one roof, one team, one contract.
+            </p>
+          </Reveal>
         </div>
 
         {/* ── Cards Grid ── */}
@@ -136,66 +143,67 @@ export default function Services() {
         >
           {SERVICES.map((service, i) => (
             <div key={service.id} className="service-card">
+              <Reveal delay={i * 80}>
+                {/* Ordinal */}
+                <div
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.55rem',
+                    letterSpacing: '0.22em',
+                    color: 'rgba(184, 121, 65, 0.45)',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  {ORDINALS[i]}
+                </div>
 
-              {/* Ordinal */}
-              <div
-                style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.55rem',
-                  letterSpacing: '0.22em',
-                  color: 'rgba(184, 121, 65, 0.45)',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                {ORDINALS[i]}
-              </div>
+                {/* Icon */}
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <ServiceIcon id={service.id as ServiceId} />
+                </div>
 
-              {/* Icon */}
-              <div style={{ marginBottom: '1.25rem' }}>
-                <ServiceIcon id={service.id as ServiceId} />
-              </div>
+                {/* Title */}
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-cormorant), Georgia, serif',
+                    fontSize: '1.625rem',
+                    fontWeight: 400,
+                    color: '#f5f2ed',
+                    lineHeight: 1.25,
+                    marginBottom: '0.375rem',
+                  }}
+                >
+                  {service.title}
+                </h3>
 
-              {/* Title */}
-              <h3
-                style={{
-                  fontFamily: 'var(--font-cormorant), Georgia, serif',
-                  fontSize: '1.5rem',
-                  fontWeight: 400,
-                  color: '#f5f2ed',
-                  lineHeight: 1.2,
-                  marginBottom: '0.375rem',
-                }}
-              >
-                {service.title}
-              </h3>
+                {/* Tagline */}
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-mono), monospace',
+                    fontSize: '0.52rem',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: '#b87941',
+                    marginBottom: '1rem',
+                  }}
+                >
+                  {service.tagline}
+                </p>
 
-              {/* Tagline */}
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.52rem',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#b87941',
-                  marginBottom: '0.875rem',
-                }}
-              >
-                {service.tagline}
-              </p>
-
-              {/* Description */}
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.875rem',
-                  fontWeight: 300,
-                  color: 'rgba(245, 242, 237, 0.5)',
-                  lineHeight: 1.85,
-                  margin: 0,
-                }}
-              >
-                {service.description}
-              </p>
+                {/* Description */}
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    fontWeight: 300,
+                    color: 'rgba(245, 242, 237, 0.5)',
+                    lineHeight: 1.85,
+                    margin: 0,
+                  }}
+                >
+                  {service.description}
+                </p>
+              </Reveal>
             </div>
           ))}
         </div>

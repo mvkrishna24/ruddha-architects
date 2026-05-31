@@ -6,9 +6,17 @@ import { NAV_LINKS } from '@/lib/constants';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
+    const handler = () => {
+      setScrolled(window.scrollY > 40);
+      
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      if (total > 0) {
+        setScrollProgress((window.scrollY / total) * 100);
+      }
+    };
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
@@ -29,12 +37,26 @@ export default function Navbar() {
         borderBottom: scrolled
           ? '1px solid rgba(184, 121, 65, 0.12)'
           : '1px solid transparent',
-        paddingTop: scrolled ? '1.2rem' : '2rem',
-        paddingBottom: scrolled ? '1.2rem' : '2rem',
+        paddingTop: scrolled ? '1rem' : '1.75rem',
+        paddingBottom: scrolled ? '1rem' : '1.75rem',
         paddingLeft: '2rem',
         paddingRight: '2rem',
       }}
     >
+      {/* Scroll Progress Bar */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '2px',
+          backgroundColor: '#b87941',
+          width: `${scrollProgress}%`,
+          transition: 'width 0.1s ease-out',
+        }}
+      />
+
       <div
         style={{
           maxWidth: '1280px',
@@ -110,24 +132,10 @@ export default function Navbar() {
               <a
                 href="#contact"
                 id="nav-cta-btn"
+                className="btn-primary"
                 style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.58rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  color: '#1a1714',
-                  backgroundColor: '#b87941',
                   padding: '0.625rem 1.375rem',
-                  display: 'inline-block',
-                  transition: 'background-color 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#d4975a';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#b87941';
+                  fontSize: '0.58rem',
                 }}
               >
                 Let&apos;s Talk
@@ -236,17 +244,10 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
+                className="btn-primary"
                 style={{
-                  fontFamily: 'var(--font-dm-mono), monospace',
-                  fontSize: '0.62rem',
-                  fontWeight: 500,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#1a1714',
-                  backgroundColor: '#b87941',
-                  textDecoration: 'none',
                   padding: '0.875rem 1.75rem',
-                  display: 'inline-block',
+                  fontSize: '0.62rem',
                 }}
               >
                 Let&apos;s Talk
