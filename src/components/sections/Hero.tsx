@@ -65,21 +65,10 @@ export default function Hero() {
 
         {/* H1 */}
         <h1
-  className="anim-fade-up anim-delay-2"
-  style={{
-    fontFamily: 'var(--font-cormorant), Georgia, serif',
-    fontSize: 'clamp(3.75rem, 9.5vw, 9.5rem)',
-    fontWeight: 300,
-    letterSpacing: '-0.02em',
-    lineHeight: 0.93,
-    color: '#f5f2ed',
-    marginBottom: '2.25rem',
-    maxWidth: '860px',
-    textShadow: '0 0 8px #b87941, 0 0 20px #b87941',
-  }}
->
-  Where Space Becomes Story
-</h1>
+          className="anim-fade-up anim-delay-2 text-[clamp(2rem,8vw,6rem)] md:text-[clamp(3.75rem,9.5vw,9.5rem)] font-[var(--font-cormorant)] font-light tracking-[-0.02em] leading-[0.93] text-f5f2ed mb-9 max-w-[860px] drop-shadow-[0_0_8px_#b87941,0_0_20px_#b87941]"
+        >
+          Where Space Becomes Story
+        </h1>
 
         {/* Sub-copy */}
         <p
