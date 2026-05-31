@@ -27,23 +27,27 @@ const dmMono = DM_Mono({
 
 /* ─── Metadata ─── */
 export const metadata: Metadata = {
-  title: 'Ruddha Architects & Interiors — Architecture That Speaks',
+  title: 'Ruddha Architects & Interiors — Where Space Becomes Story | Warangal',
   description:
-    'Ruddha Architects & Interiors is a premium architecture and interior design studio based in Hyderabad, India. We craft spaces that are structurally sound, visually timeless, and deeply human.',
+    'Ruddha Architects & Interiors is a professional architecture, interior design, and turnkey execution studio based in Kashibugga, Warangal, Telangana. Led by Ar. Sathkruth Gone, we deliver AI-integrated, client-centric architectural design from concept to completion.',
   keywords: [
-    'architecture',
-    'interior design',
-    'Hyderabad',
-    'luxury architecture',
-    'residential architecture',
-    'commercial design',
+    'architects in Warangal',
+    'architecture firm Warangal',
+    'interior design Warangal',
     'Ruddha Architects',
-    'Telangana',
+    'Ar. Sathkruth Gone',
+    'architecture Telangana',
+    'residential architecture Warangal',
+    'turnkey construction Warangal',
+    'interior designers Telangana',
+    'landscape design Warangal',
+    'renovation Warangal',
+    'AI integrated architecture',
   ],
   authors: [{ name: 'Ruddha Architects & Interiors' }],
   openGraph: {
-    title: 'Ruddha Architects & Interiors',
-    description: 'Architecture That Speaks',
+    title: 'Ruddha Architects & Interiors — Warangal, Telangana',
+    description: 'Where Space Becomes Story. Architecture, interiors, and execution by Ar. Sathkruth Gone.',
     type: 'website',
     locale: 'en_IN',
   },
