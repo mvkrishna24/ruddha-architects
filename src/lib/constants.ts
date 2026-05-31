@@ -1,10 +1,10 @@
 // ─── Navigation ────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: 'Work',      href: '#projects'   },
-  { label: 'About',     href: '#philosophy' },
-  { label: 'Services',  href: '#services'   },
-  { label: 'Process',   href: '#process'    },
-  { label: 'Contact',   href: '#contact'    },
+  { label: 'Work',      href: '/projects'   },
+  { label: 'About',     href: '/#philosophy' },
+  { label: 'Services',  href: '/#services'   },
+  { label: 'Process',   href: '/#process'    },
+  { label: 'Contact',   href: '/#contact'    },
 ] as const;
 
 export type NavLink = (typeof NAV_LINKS)[number];
