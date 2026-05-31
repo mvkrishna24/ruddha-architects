@@ -7,6 +7,7 @@ import Process from '@/components/sections/Process';
 import FeaturedProjects from '@/components/sections/FeaturedProjects';
 import Contact from '@/components/sections/Contact';
 import TrustSignals from '@/components/sections/TrustSignals';
+import ConstructionJourney from '@/components/sections/ConstructionJourney';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
 
       <main id="main-content">
         <Hero />
+        <ConstructionJourney />
         <div className="divider-hairline" />
         <Philosophy />
         <div className="divider-hairline" />

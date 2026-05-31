@@ -64,64 +64,166 @@ export default function Philosophy() {
             </Reveal>
 
             <Reveal delay={200}>
-              <div>
-                {/* Copper rule */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {/* Principal Portrait Placeholder */}
                 <div
                   style={{
-                    width: '56px',
-                    height: '2px',
-                    backgroundColor: '#b87941',
-                    marginBottom: '1.25rem',
-                  }}
-                />
-                <p
-                  style={{
-                    fontFamily: 'var(--font-dm-mono), monospace',
-                    fontSize: '0.55rem',
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(26, 23, 20, 0.4)',
-                    margin: 0,
+                    width: '100%',
+                    maxWidth: '300px',
+                    aspectRatio: '3/4',
+                    backgroundColor: '#e8e3db',
+                    border: '1px solid rgba(184, 121, 65, 0.2)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '2rem',
+                    textAlign: 'center',
+                    position: 'relative',
+                    overflow: 'hidden',
                   }}
                 >
-                  &mdash; {FOUNDER.name}, {FOUNDER.role}
-                </p>
+                  {/* Subtle inner grid lines mimicking architectural site plan */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: '10px',
+                      border: '1px dashed rgba(184, 121, 65, 0.15)',
+                      pointerEvents: 'none',
+                    }}
+                  />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '0.75rem', opacity: 0.45 }}>
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="#b87941" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.48rem',
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: '#b87941',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Principal Headshot<br />Placeholder (3:4)
+                  </span>
+                </div>
+
+                <div>
+                  {/* Copper rule */}
+                  <div
+                    style={{
+                      width: '56px',
+                      height: '2px',
+                      backgroundColor: '#b87941',
+                      marginBottom: '1.25rem',
+                    }}
+                  />
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.55rem',
+                      letterSpacing: '0.2em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(26, 23, 20, 0.8)',
+                      fontWeight: 600,
+                      margin: 0,
+                    }}
+                  >
+                    &mdash; {FOUNDER.name}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.5rem',
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: '#b87941',
+                      marginTop: '2px',
+                      margin: 0,
+                    }}
+                  >
+                    {FOUNDER.role}
+                  </p>
+                </div>
               </div>
             </Reveal>
 
-            {/* Founder credential */}
+            {/* Founder credentials */}
             <Reveal delay={300}>
               <div
                 style={{
-                  paddingTop: '2.5rem',
+                  paddingTop: '2rem',
                   borderTop: '1px solid rgba(26, 23, 20, 0.08)',
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '1.5rem',
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-dm-mono), monospace',
-                    fontSize: '0.52rem',
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(184, 121, 65, 0.7)',
-                    marginBottom: '0.625rem',
-                  }}
-                >
-                  Education
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.52rem',
+                      letterSpacing: '0.2em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(184, 121, 65, 0.7)',
+                      marginBottom: '0.5rem',
+                    }}
+                  >
+                    Registration
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.68rem',
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(26, 23, 20, 0.65)',
+                    }}
+                  >
+                    COA / CA/XXXX/XXXXX
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.75rem',
+                      color: 'rgba(26, 23, 20, 0.4)',
+                      marginTop: '2px',
+                    }}
+                  >
+                    Council of Architecture
+                  </div>
                 </div>
-                <div
-                  style={{
-                    fontFamily: 'var(--font-cormorant), Georgia, serif',
-                    fontSize: '1.25rem',
-                    fontWeight: 300,
-                    color: 'rgba(26, 23, 20, 0.75)',
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {FOUNDER.degree}
+
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-dm-mono), monospace',
+                      fontSize: '0.52rem',
+                      letterSpacing: '0.2em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(184, 121, 65, 0.7)',
+                      marginBottom: '0.5rem',
+                    }}
+                  >
+                    Education
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-cormorant), Georgia, serif',
+                      fontSize: '1.15rem',
+                      fontWeight: 300,
+                      color: 'rgba(26, 23, 20, 0.75)',
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {FOUNDER.degree}
+                  </div>
                 </div>
               </div>
             </Reveal>
+
           </div>
 
           {/* Right: Studio Story */}
