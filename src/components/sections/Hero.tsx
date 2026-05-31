@@ -78,8 +78,7 @@ export default function Hero() {
     textShadow: '0 0 8px #b87941, 0 0 20px #b87941',
   }}
 >
-  From Concept<br />
-  <span style={{ fontFamily: 'var(--font-dm-mono), monospace', fontSize: '0.75em', color: '#b87941' }}>To Completion</span>
+  Where Space Becomes Story
 </h1>
 
         {/* Sub-copy */}

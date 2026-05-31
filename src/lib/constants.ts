@@ -75,9 +75,9 @@ export const BRAND = {
   name: 'Ruddha',
   full: 'Ruddha Architects & Interiors',
   tagline: 'Architecture That Speaks',
-  email: 'hello@ruddhaarchitects.com',
+  email: 'ruddha.arch@gmail.com',
   phone: '+91 98765 43210',
-  address: 'Hyderabad, Telangana, India',
+  address: 'Kashibugga, Warangal, Telangana, India',
 } as const;
 
 export const PROJECT_TYPES = [
