@@ -175,7 +175,7 @@ export default function Hero() {
             color: 'rgba(245, 242, 237, 0.18)',
           }}
         >
-          01 / 05
+          01 — Hero
         </span>
       </div>
     </section>
