@@ -76,6 +76,13 @@ export const SERVICES = [
       'We manage the entire project lifecycle — design, procurement, contractor coordination, site supervision, and handover. You receive a finished space without managing multiple vendors or navigating construction complexity.',
   },
   {
+    id:          'vastu',
+    title:       'Vastu Consultancy',
+    tagline:     'Harmony by design.',
+    description:
+      'We integrate Vastu Shastra principles into modern architectural planning — ensuring your home or workspace is designed for positive energy, prosperity, and well-being without compromising contemporary aesthetics.',
+  },
+  {
     id:          'consultation',
     title:       'Design Consultation',
     tagline:     'Clarity before commitment.',
