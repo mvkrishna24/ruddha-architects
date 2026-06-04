@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
   },
+  alternates: {
+    canonical: 'https://ruddha.in',
+  },
   robots: {
     index: true,
     follow: true,
