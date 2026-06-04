@@ -215,3 +215,12 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'Renovation',
   'Hospitality',
 ];
+
+// ─── Utility ─────────────────────────────────────────────────────────────────
+/**
+ * Returns a project by its slug ID, or undefined if not found.
+ * Useful for dynamic route pages: /projects/[slug]
+ */
+export function getProjectById(id: string) {
+  return PROJECTS.find((p) => p.id === id);
+}
