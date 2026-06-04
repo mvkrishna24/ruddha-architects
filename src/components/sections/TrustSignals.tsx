@@ -36,7 +36,7 @@ export default function TrustSignals() {
         </Reveal>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" role="list" aria-label="Studio differentiators"
           style={{ backgroundColor: 'rgba(26, 23, 20, 0.08)' }}
         >
           {TRUST_SIGNALS.map((signal, i) => (
