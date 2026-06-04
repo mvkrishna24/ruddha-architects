@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
+/** Props for the Reveal scroll-animation wrapper */
 interface Props {
   children:   ReactNode;
   delay?:     number; // in ms
