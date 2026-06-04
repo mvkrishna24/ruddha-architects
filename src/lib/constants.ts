@@ -167,6 +167,12 @@ export const TRUST_SIGNALS = [
     value: 'Senior Attention',
     note:  'Every project is personally led by Ar. Sathkruth Gone from first consultation to final handover — no delegation to juniors at critical stages.',
   },
+  {
+    id:    'transparency',
+    label: 'Transparent Pricing',
+    value: 'No Hidden Costs',
+    note:  'Detailed cost estimates, itemised quotations, and clear payment milestones — full financial visibility from day one of your project.',
+  },
 ] as const;
 
 // ─── Featured Projects ────────────────────────────────────────────────────────
