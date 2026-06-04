@@ -201,6 +201,16 @@ export const FEATURED_PROJECTS = [
       'A boutique hospitality retreat that dissolves the boundary between interior luxury and the surrounding natural landscape — site, structure, and landscape as one.',
     dark:        true,
   },
+  {
+    id:          'heritage-bungalow',
+    category:    'Renovation',
+    title:       'Heritage Bungalow Restoration',
+    location:    'Hanamkonda, Telangana',
+    year:        '2025',
+    description:
+      'A century-old colonial bungalow sensitively restored — preserving original masonry, timber fretwork, and verandah character while integrating modern services invisibly within the historic fabric.',
+    dark:        false,
+  },
 ] as const;
 
 export type Project = (typeof FEATURED_PROJECTS)[number];
