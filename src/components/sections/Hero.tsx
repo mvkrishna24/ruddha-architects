@@ -86,7 +86,7 @@ export default function Hero() {
               marginBottom: '3rem',
             }}
           >
-            An architecture and interiors studio based in Warangal — designing spaces that are disciplined in structure, refined in detail, and built for the life lived inside them.
+            An architecture and interiors studio based in Warangal. Disciplined in structure, refined in detail, and built for the life lived inside them.
           </p>
         </Reveal>
 
