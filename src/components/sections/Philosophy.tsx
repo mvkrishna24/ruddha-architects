@@ -310,7 +310,7 @@ export default function Philosophy() {
               >
                 {[
                   { number: '2+',  label: 'Years Active' },
-                  { number: '15+', label: 'Projects' },
+                  { number: '20+', label: 'Projects' },
                   { number: '6',   label: 'Disciplines' },
                 ].map(({ number, label }) => (
                   <div key={label}>
