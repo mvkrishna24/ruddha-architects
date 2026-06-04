@@ -231,3 +231,5 @@ export const PROJECT_TYPES = [
   'Turnkey Execution',
   'Design Consultation',
 ] as const;
+
+export type Brand = typeof BRAND;
