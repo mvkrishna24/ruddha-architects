@@ -54,7 +54,7 @@ export default function Process() {
                   maxWidth: '520px',
                 }}
               >
-                A process designed around you — not us.
+                A process designed around you — not us.
               </h2>
             </Reveal>
           </div>
