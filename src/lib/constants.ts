@@ -20,6 +20,8 @@ export const BRAND = {
   city:     'Warangal',
   state:    'Telangana',
   est:      '2024',
+  whatsapp: 'https://wa.me/919966024626',
+  instagram: 'https://instagram.com/ruddha.architects',
 } as const;
 
 // ─── Founder ─────────────────────────────────────────────────────────────────
