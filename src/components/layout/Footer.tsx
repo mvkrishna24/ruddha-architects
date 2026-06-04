@@ -248,6 +248,58 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* ── Social Links ── */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '1.5rem',
+            paddingBottom: '2rem',
+            paddingTop: '2rem',
+            borderTop: '1px solid rgba(245, 242, 237, 0.07)',
+          }}
+        >
+          <a
+            href={BRAND.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            id="footer-whatsapp"
+            aria-label="Chat on WhatsApp"
+            style={{
+              fontFamily: 'var(--font-dm-mono), monospace',
+              fontSize: '0.52rem',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: 'rgba(245, 242, 237, 0.35)',
+              textDecoration: 'none',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#b87941'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245, 242, 237, 0.35)'; }}
+          >
+            WhatsApp
+          </a>
+          <a
+            href={BRAND.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            id="footer-instagram"
+            aria-label="Follow on Instagram"
+            style={{
+              fontFamily: 'var(--font-dm-mono), monospace',
+              fontSize: '0.52rem',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: 'rgba(245, 242, 237, 0.35)',
+              textDecoration: 'none',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#b87941'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245, 242, 237, 0.35)'; }}
+          >
+            Instagram
+          </a>
+        </div>
+
         {/* ── Bottom Bar ── */}
         <div
           className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3"
