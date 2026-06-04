@@ -12,6 +12,28 @@ import ConstructionJourney from '@/components/sections/ConstructionJourney';
 export default function HomePage() {
   return (
     <>
+      {/* Skip to main content for keyboard/screen-reader users */}
+      <a
+        href="#main-content"
+        id="skip-to-content"
+        style={{
+          position: 'absolute',
+          top: '-40px',
+          left: 0,
+          background: '#b87941',
+          color: '#fff',
+          padding: '8px 16px',
+          zIndex: 9999,
+          fontSize: '0.875rem',
+          fontFamily: 'var(--font-body)',
+          textDecoration: 'none',
+          transition: 'top 0.2s',
+        }}
+        onFocus={(e) => { (e.currentTarget as HTMLAnchorElement).style.top = '0'; }}
+        onBlur={(e) => { (e.currentTarget as HTMLAnchorElement).style.top = '-40px'; }}
+      >
+        Skip to content
+      </a>
       <Navbar />
 
       <main id="main-content">
