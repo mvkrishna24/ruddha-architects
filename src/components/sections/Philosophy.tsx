@@ -278,6 +278,7 @@ export default function Philosophy() {
                   'Modern Architecture',
                   'Functional Planning',
                   'Client-Centric Process',
+                  'Sustainable Materials',
                 ].map((tag) => (
                   <span
                     key={tag}
